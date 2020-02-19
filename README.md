@@ -14,3 +14,6 @@ In the CSS you can enable the media query and set the desired pixels you want th
 ## Dependencies:
 Full minified version [jQuery](https://jquery.com/download/)
 Full version [Wheel-Indicator by Promo](https://github.com/Promo/wheel-indicator)
+
+## Live demo:
+[CodePen](https://codepen.io/Drixon/pen/vYOKqoR)
