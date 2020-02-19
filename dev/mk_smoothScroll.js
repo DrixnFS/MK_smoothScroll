@@ -1,16 +1,10 @@
 /**
  * Handles smooth scrolling for any one page websites no matter the language used.
  * Should be supported with every browser and also takes care of mobile devices
- * @version 1.0.0
+ * @version 1.0.1
  * @link https://github.com/DrixnFS/MK_smoothScroll
  * @license MIT
  */
-
- /**
-  * Dependencies
-  * wheel-indicator by Promo
-  * @link https://github.com/Promo/wheel-indicator
-  */
 (function ($) {
 
     /**
@@ -48,11 +42,12 @@
                             that.scrollTo(index);
                         });
                 });
+                that.fixPanelPosition();
             }
-            that.fixPanelPosition();
             that.update();
             $(window).on('resize', function () {
                 that.update();
+                that.fixPanelPosition();
             });
         },
 
@@ -140,21 +135,6 @@
             } else {
                 wheel_indicator.turnOff();
             }
-        });
-
-        $('body').swipe({
-            allowPageScroll: 'vertical',
-            preventDefaultEvents: false,
-            swipe: function (event, direction, distance, duration, fingerCount) {
-                if (MK_page_scroll._pagePanel.is(':visible')) {
-                    if (direction == 'down') {
-                        MK_page_scroll.prev();
-                    }
-                    if (direction == 'up') {
-                        MK_page_scroll.next();
-                    }
-                }
-            },
         });
     });
 
